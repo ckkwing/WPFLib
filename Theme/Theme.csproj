@@ -99,7 +99,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
+    <ProjectReference Include="..\..\CSharpUtility\Utilities\Utilities.csproj">
       <Project>{3362bccc-3dda-4db8-8e91-e4ff3ba9fea3}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
