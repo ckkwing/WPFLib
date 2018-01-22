@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,7 +83,8 @@ namespace Theme.CustomControl
                     {
                         // The child has already been created, let's be sure it's in the right spot
                         if (child == children[childIndex])
-                            NLogger.LogHelper.UILogger.Debug("Wrong child was generated");
+                            //NLogger.LogHelper.UILogger.Debug("Wrong child was generated");
+                            Debug.WriteLine("Wrong child was generated");
                     }
 
                     // Measurements will depend on layout algorithm

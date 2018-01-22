@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -115,13 +116,15 @@ namespace Theme.CustomControl
                     }
                     catch (InvalidOperationException e)
                     {
-                        NLogger.LogHelper.UILogger.DebugFormat("DragMove exception: {0}", e.Message);
+                        //NLogger.LogHelper.UILogger.DebugFormat("DragMove exception: {0}", e.Message);
+                        Debug.WriteLine("DragMove exception: " + e.Message);
                     }
                 };
             }
             catch (Exception ex)
             {
-                NLogger.LogHelper.UILogger.DebugFormat("InitializeEvent exception: {0}", ex.Message);
+                //NLogger.LogHelper.UILogger.DebugFormat("InitializeEvent exception: {0}", ex.Message);
+                Debug.WriteLine("InitializeEvent exception: " + ex.Message);
             }
         }
 

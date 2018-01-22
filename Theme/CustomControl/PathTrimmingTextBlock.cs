@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -155,7 +156,8 @@ namespace Theme.CustomControl
             }
             catch (Exception ex)
             {
-                NLogger.LogHelper.UILogger.Debug("Failed", ex);
+                //NLogger.LogHelper.UILogger.Debug("Failed", ex);
+                Debug.WriteLine("Failed " + ex.Message);
                 return string.Empty;
             }
         }
@@ -232,7 +234,8 @@ namespace Theme.CustomControl
             }
             catch (Exception ex)
             {
-                NLogger.LogHelper.UILogger.Debug("Failed", ex);
+                //NLogger.LogHelper.UILogger.Debug("Failed", ex);
+                Debug.WriteLine("Failed: " + ex.Message);
                 return string.Empty;
             }
         }
