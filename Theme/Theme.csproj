@@ -7,8 +7,8 @@
     <ProjectGuid>{72CED788-33BB-467D-B946-1E07BE5055AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MediaCenter.Theme</RootNamespace>
-    <AssemblyName>MediaCenter.Theme</AssemblyName>
+    <RootNamespace>Theme</RootNamespace>
+    <AssemblyName>Theme</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
