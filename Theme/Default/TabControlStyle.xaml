@@ -1,0 +1,122 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:customControl="clr-namespace:Theme.CustomControl">
+    <Style TargetType="{x:Type Control}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="TabControl_Vertical_Style" TargetType="{x:Type TabControl}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>
+
+    <!--<Style x:Key="SettingTabControlStyle" TargetType="{x:Type TabControl}" BasedOn="{StaticResource TabControl_Vertical_Style}">
+        <Setter Property="TabStripPlacement" Value="Left" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>-->
+
+    <Style x:Key="SettingTabControlStyle" TargetType="{x:Type TabControl}">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="TabStripPlacement" Value="Left" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0">
+                            <TabPanel IsItemsHost="True" />
+                        </Border>
+                        <Border Grid.Column="1" BorderThickness="{TemplateBinding BorderThickness}" Background="#FFFFFFFF"  BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter ContentSource="SelectedContent" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SettingTabItemStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <!--<Setter Property="Width" Value="140" />-->
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="MaxWidth" Value="200" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="ClipToBounds" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Border x:Name="wrapper" Background="#f2f2f2" Margin="0,0,-1,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="28" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding Icon, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabItem}}}"
+                                Height="{Binding IconHeight, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabItem}}}"
+                                Width="{Binding IconWidth, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabItem}}}"
+                                Margin="10,0,0,0" VerticalAlignment="Center"/>
+                            <Border x:Name="borderHeading" Grid.Column="1" Background="Transparent"  Selector.IsSelected="{DynamicResource {x:Static SystemParameters.HighContrastKey}}"
+                                VerticalAlignment="Center">
+                                <ContentPresenter x:Name="content" Margin="{TemplateBinding Padding}" Height="Auto" Content="{TemplateBinding Header}" TextBlock.Foreground="#828282">
+                                    <ContentPresenter.ContentTemplate>
+                                        <DataTemplate>
+                                            <Border>
+                                                <customControl:EnhancedTextBlock x:Name="txtHeader" Text="{TemplateBinding Content}"
+                                                    FontWeight="{TemplateBinding TextBlock.FontWeight}" FontSize="12" Foreground="{TemplateBinding TextBlock.Foreground}" />
+                                            </Border>
+                                        </DataTemplate>
+                                    </ContentPresenter.ContentTemplate>
+                                </ContentPresenter>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Selector.IsSelected" Value="true">
+                            <Setter Property="Background" Value="#ffffff" TargetName="wrapper" />
+                            <Setter Property="TextBlock.FontWeight" Value="Bold" TargetName="content" />
+                            <Setter Property="TextBlock.Foreground" Value="#646464" TargetName="content" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <!--<ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="Selector.IsSelected" Value="false" SourceName="borderHeading"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="Background" Value="{DynamicResource Brush_Green_global}" TargetName="borderHeading" />
+                                <Setter Property="BorderThickness" Value="0,1,1,0" TargetName="borderHeading" />
+                                <Setter Property="BorderBrush" Value="#FF0E2E16" TargetName="borderHeading" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Visibility" Value="Visible" TargetName="highlightBorder" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                        <Trigger Property="Selector.IsSelected" Value="true" SourceName="borderHeading">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="highlightBorder" />
+                            <Setter Property="BorderThickness" Value="2" TargetName="borderHeading" />
+                            <Setter Property="BorderBrush" Value="Transparent" TargetName="borderHeading" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true" />
+                                <Condition Property="Selector.IsSelected" Value="true" SourceName="borderHeading"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="Background" Value="{DynamicResource COLOR_ACTIVECAPTION}" TargetName="borderHeading" />
+                                <Setter Property="Foreground" Value="{DynamicResource COLOR_HIGHLIGHTTEXT}" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
