@@ -20,6 +20,7 @@
 
     <SolidColorBrush x:Key="Brush_Main" Color="{StaticResource Color_Main}"/>
     <SolidColorBrush x:Key="Brush_Normal_Text" Color="#333333" />
+    <SolidColorBrush x:Key="Brush_Highlight" Color="#3cbcb7" />
 
     <Style x:Key="StyleBasicWindow" TargetType="{x:Type customControl:BasicWindow}">
         <Setter Property="FontFamily" Value="{DynamicResource FONTFAMILY_GLOBAL}" />
@@ -95,4 +96,41 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <!--TextBox start-->
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="Foreground" Value="#333333"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FONTFAMILY_GLOBAL}" />
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <Border
+              Name="Border"
+              CornerRadius="0"
+              Padding="2"
+              Background="#FFFFFF"
+              BorderBrush="#cfcfcf"
+              BorderThickness="1" >
+                        <ScrollViewer Margin="0" x:Name="PART_ContentHost"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="#EEEEEE"/>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#EEEEEE"/>
+                            <Setter Property="Foreground" Value="#888888"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--TextBox end-->
 </ResourceDictionary>
