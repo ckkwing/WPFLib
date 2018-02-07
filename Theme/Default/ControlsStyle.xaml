@@ -7,6 +7,7 @@
         <ResourceDictionary Source="/Theme;component/Default/ComboBoxStyle.xaml" />
         <ResourceDictionary Source="/Theme;component/Default/CheckBoxStyle.xaml" />
         <ResourceDictionary Source="/Theme;component/Default/TabControlStyle.xaml" />
+        <ResourceDictionary Source="/Theme;component/Default/ListViewStyle.xaml" />
        <!-- <ResourceDictionary Source="/BackItUp.Theme;component/Default/BackupButton.xaml" />
         <ResourceDictionary Source="/BackItUp.Theme;component/Default/ButtonShapeRadioButton.xaml" />
         <ResourceDictionary Source="/BackItUp.Theme;component/Default/NavigationBottomBar.xaml" />
