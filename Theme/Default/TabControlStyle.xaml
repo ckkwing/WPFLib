@@ -31,7 +31,7 @@
                         <Border Grid.Column="0">
                             <TabPanel IsItemsHost="True" />
                         </Border>
-                        <Border Grid.Column="1" BorderThickness="{TemplateBinding BorderThickness}" Background="#FFFFFFFF"  BorderBrush="{TemplateBinding BorderBrush}">
+                        <Border Grid.Column="1" x:Name="tabContentWrapper" BorderThickness="{TemplateBinding BorderThickness}" Background="#FFFFFFFF"  BorderBrush="{TemplateBinding BorderBrush}">
                             <ContentPresenter ContentSource="SelectedContent" />
                         </Border>
                     </Grid>

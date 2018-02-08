@@ -82,6 +82,7 @@
     <Compile Include="CustomControl\TextBoxEllipisis.cs" />
     <Compile Include="CustomControl\UniformGridPanel.cs" />
     <Compile Include="CustomControl\VirtualizingWrapPanel.cs" />
+    <Compile Include="Helper\ListViewStyleHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
@@ -146,6 +147,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CSharpUtility\Utilities\Utilities.csproj">
+      <Project>{3362BCCC-3DDA-4DB8-8E91-E4FF3BA9FEA3}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

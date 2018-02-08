@@ -35,13 +35,21 @@
         <Setter Property="Foreground" Value="{StaticResource Brush_Normal_Text}" />
     </Style>
 
-    <Style TargetType="{x:Type customControl:EnhancedTextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+    <!--<Style TargetType="{x:Type customControl:EnhancedTextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="TextTrimming" Value="CharacterEllipsis" />
         <Setter Property="ToolTip" Value="{Binding Text,RelativeSource={RelativeSource Mode=Self}}" />
         <Setter Property="ToolTipService.IsEnabled" Value="{Binding IsTextTrimmed, RelativeSource={RelativeSource Self}}" />
+    </Style>-->
+
+    <Style TargetType="{x:Type customControl:EnhancedTextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="TextWrapping" Value="NoWrap" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+        <Setter Property="ToolTip" Value="{Binding Text,RelativeSource={RelativeSource Mode=Self}}" />
+        <Setter Property="ToolTipService.IsEnabled" Value="{Binding IsTextTrimmed, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
     <Style TargetType="{x:Type customControl:PathTrimmingTextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
