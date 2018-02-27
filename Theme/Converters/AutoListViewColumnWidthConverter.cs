@@ -59,7 +59,7 @@ namespace Theme.Converters
 
             try
             {
-                width = (double)values[0];
+                width = (double)values[0]; //ListView ActualWidth
                 ListView listView = values[1] as ListView;
                 GridView gv = listView.View as GridView;
                 for (int i = 0; i < gv.Columns.Count; i++)
