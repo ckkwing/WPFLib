@@ -70,10 +70,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\AutoListViewColumnWidthConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityCollapseConverter.cs" />
+    <Compile Include="Converters\ObjectToBoolConverter.cs" />
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="Converters\SelectedItemDisplayConverter.cs" />
     <Compile Include="Converters\WidthAndHeightToRectConverter.cs" />
     <Compile Include="CustomControl\BasicWindow.cs" />
+    <Compile Include="CustomControl\BusyIndicator.xaml.cs">
+      <DependentUpon>BusyIndicator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControl\CustomVirtualizingPanel.cs" />
     <Compile Include="CustomControl\Dialog\CommonDialog.cs" />
     <Compile Include="CustomControl\EnhancedTextBlock.cs" />
@@ -87,6 +92,10 @@
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CustomControl\BusyIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Default\CheckBoxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,6 +109,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Default\ListViewStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Default\ProgressBarStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
