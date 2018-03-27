@@ -115,7 +115,7 @@
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="Foreground" Value="#333333"/>
         <Setter Property="FontFamily" Value="{DynamicResource FONTFAMILY_GLOBAL}" />
-        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Normal}"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
