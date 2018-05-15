@@ -83,6 +83,12 @@
     <Compile Include="CustomControl\Dialog\CommonDialog.cs" />
     <Compile Include="CustomControl\EnhancedTextBlock.cs" />
     <Compile Include="CustomControl\ImageButton.cs" />
+    <Compile Include="CustomControl\Loading\CircularLoading1.xaml.cs">
+      <DependentUpon>CircularLoading1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\Loading\CircularLoading2.xaml.cs">
+      <DependentUpon>CircularLoading2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControl\PathTrimmingTextBlock.cs" />
     <Compile Include="CustomControl\TextBoxEllipisis.cs" />
     <Compile Include="CustomControl\UniformGridPanel.cs" />
@@ -93,6 +99,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="CustomControl\BusyIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControl\Loading\CircularLoading1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControl\Loading\CircularLoading2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
