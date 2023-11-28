@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33130.400
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Theme", "Theme.csproj", "{72CED788-33BB-467D-B946-1E07BE5055AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Theme", "Theme.csproj", "{72CED788-33BB-467D-B946-1E07BE5055AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A2E6997-7A1B-4D78-8A45-24B4C76DA2E4}
 	EndGlobalSection
 EndGlobal
