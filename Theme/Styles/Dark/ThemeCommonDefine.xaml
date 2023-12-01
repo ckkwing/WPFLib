@@ -1,0 +1,55 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore"
+    xmlns:customControl="clr-namespace:Theme.CustomControl">
+
+    <media:FontFamily x:Key="FONTFAMILY_GLOBAL">Segoe UI,Tahoma</media:FontFamily>
+    
+    <Color x:Key="COLOR_BLACK">#000000</Color>
+    <Color x:Key="COLOR_WHITE">#FFFFFF</Color>
+    <SolidColorBrush x:Key="BRUSH_BLACK" Color="{StaticResource COLOR_BLACK}" />
+    <SolidColorBrush x:Key="BRUSH_WHITE" Color="{StaticResource COLOR_WHITE}" />
+
+    <System:Double x:Key="FONTSIZE_TITLE_H1">96</System:Double>
+    <System:Double x:Key="FONTSIZE_TITLE_H2">60</System:Double>
+    <System:Double x:Key="FONTSIZE_TITLE_H3">48</System:Double>
+    <System:Double x:Key="FONTSIZE_TITLE_H4">34</System:Double>
+    <System:Double x:Key="FONTSIZE_TITLE_H5">24</System:Double>
+    <System:Double x:Key="FONTSIZE_TITLE_H6">20</System:Double>
+    <System:Double x:Key="FONTSIZE_MAINBODY_1">16</System:Double>
+    <System:Double x:Key="FONTSIZE_MAINBODY_2">14</System:Double>
+    <System:Double x:Key="FONTSIZE_UNDERLINED">16</System:Double>
+
+    <System:Double x:Key="OPACITY_DISABLED">0.35</System:Double>
+
+    <!-- The corner radius of many elements as type CornerRadius. -->
+    <CornerRadius x:Key="ElementCornerRadiusCR">2.5,2.5,2.5,2.5</CornerRadius>
+
+    <!--#region Global font start-->
+    <Style TargetType="{x:Type TextElement}">
+        <Setter Property="FontFamily" Value="{DynamicResource FONTFAMILY_GLOBAL}"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="{DynamicResource FONTFAMILY_GLOBAL}"/>
+    </Style>
+    <Style TargetType="{x:Type Control}">
+        <Setter Property="FontFamily" Value="{DynamicResource FONTFAMILY_GLOBAL}"/>
+    </Style>
+    <!--#endregion-->
+
+    <Style x:Key="NullFocusVisualStyle"  TargetType="{x:Type Control}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle StrokeThickness="0" Stroke="Transparent" SnapsToDevicePixels="true"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    
+</ResourceDictionary>

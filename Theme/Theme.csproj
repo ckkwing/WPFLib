@@ -12,6 +12,11 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Styles\Dark\Brushs.xaml" />
+    <None Remove="Styles\Dark\ButtonStyles.xaml" />
+    <None Remove="Styles\Dark\Theme.xaml" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Prism.Core" Version="7.0.0.396" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +89,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles\Dark\Brushs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Dark\ButtonStyles.xaml" />
+    <Page Include="Styles\Dark\ComboBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Dark\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Dark\ThemeCommonDefine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Default\Images\Test.jpg" />
@@ -105,6 +123,9 @@
   <ItemGroup>
     <Resource Include="Resources\Default\Images\CheckBox\CheckBox_Checked.png" />
     <Resource Include="Resources\Default\Images\CheckBox\CheckBox_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Dark\" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG</DefineConstants>

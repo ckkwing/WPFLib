@@ -1,0 +1,44 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore">
+    <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="../ThemeCommonDefine.xaml" />-->
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="BRUSH_BACKGROUND_HOVER">#3300CCCC</SolidColorBrush>
+    <SolidColorBrush x:Key="BRUSH_BACKGROUND_PRESSED">#1A00CCCC</SolidColorBrush>
+    <SolidColorBrush x:Key="BRUSH_BORDER_NORMAL">#FFFFFFFF</SolidColorBrush>
+    <SolidColorBrush x:Key="BRUSH_BORDER_HOVER">#FF00CCCC</SolidColorBrush>
+    <SolidColorBrush x:Key="BRUSH_BORDER_PRESSED">#FF1E9898</SolidColorBrush>
+    <SolidColorBrush x:Key="BRUSH_TEXT_NORMAL" Color="#FFC8C8C8"/>
+    <SolidColorBrush x:Key="BRUSH_TEXT_HOVER">#FFA3CCCC</SolidColorBrush>
+    <SolidColorBrush x:Key="BRUSH_TEXT_PRESSED">#FFA3CCCC</SolidColorBrush>
+    <SolidColorBrush x:Key="BRUSH_COMBOBOX_STROKE">#4A4A4A</SolidColorBrush>
+    <SolidColorBrush x:Key="BRUSH_COMBOBOX_HIGHLIGHT" Color="#bababa" />
+    <SolidColorBrush x:Key="BRUSH_MEDIUMDARKBORDERBRUSH" Color="#8B8B8B" />
+    <SolidColorBrush x:Key="BRUSH_DISABLED" Color="#aaaaaa" />
+    <SolidColorBrush x:Key="BRUSH_HIGHLIGHTED" Color="#4a4a4a" />
+
+
+    <LinearGradientBrush x:Key="LINEARBRUSH_NORMALBACKGROUNDBRUSH" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="{DynamicResource COLOR_WHITE}" Offset="0" />
+                <GradientStop Color="#DDDDDD" Offset="1" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LINEARBRUSH_NORMALHARDBACKGROUNDBRUSH" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="{DynamicResource COLOR_WHITE}" Offset="0" />
+                <GradientStop Color="#DDDDDD" Offset="1" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+</ResourceDictionary>
