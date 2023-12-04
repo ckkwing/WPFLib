@@ -12,6 +12,12 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Default\**" />
+    <EmbeddedResource Remove="Default\**" />
+    <None Remove="Default\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Styles\Dark\BaseWindowStyle.xaml" />
     <None Remove="Styles\Dark\Brushs.xaml" />
     <None Remove="Styles\Dark\ButtonStyles.xaml" />
     <None Remove="Styles\Dark\Theme.xaml" />
@@ -49,46 +55,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Default\CheckBoxStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Default\ComboBoxStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Default\ControlsStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Default\ListViewStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Default\ProgressBarStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Default\Resource_Images.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Default\ScrollbarStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Default\TabControlStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Default\Theme.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Default\WindowStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Page Include="Styles\Dark\BaseWindowStyle.xaml" />
     <Page Include="Styles\Dark\Brushs.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,7 +66,7 @@
     <Page Include="Styles\Dark\Theme.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\Dark\ThemeCommonDefine.xaml">
+    <Page Include="Styles\ThemeCommonDefine.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -125,6 +92,7 @@
     <Resource Include="Resources\Default\Images\CheckBox\CheckBox_Normal.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CustomControl\Dialog\" />
     <Folder Include="Resources\Dark\" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
