@@ -106,9 +106,14 @@ namespace Theme.CustomControl
         public static readonly DependencyProperty TextProperty =
         DependencyProperty.Register("Text", typeof(string), typeof(ImageButton));
 
-        public ImageButton()
+        //public ImageButton()
+        //{
+        //    this.Style = (Style)Application.Current.Resources["ImageButtonStyle"];
+        //}
+
+        static ImageButton()
         {
-            this.Style = (Style)Application.Current.Resources["ImageButtonStyle"];
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ImageButton), new FrameworkPropertyMetadata(typeof(ImageButton)));
         }
     }
 }

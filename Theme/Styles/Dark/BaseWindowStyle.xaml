@@ -8,21 +8,41 @@
     xmlns:CustomControls="clr-namespace:Theme.CustomControl">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../ThemeCommonDefine.xaml" />
+        <ResourceDictionary Source="Images.xaml" />
+        <ResourceDictionary Source="ButtonStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <ControlTemplate x:Key="BaseWindowControlTemplate" TargetType="{x:Type CustomControls:BaseWindow}">
-        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+        <Border Background="Transparent" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Grid x:Name="TitleBar" Grid.Row="0"></Grid>
-                <Grid x:Name="MainContent" Grid.Row="1">
+                <Grid x:Name="TitleBar" Grid.Row="0" Background="{Binding TitlebarBackground, RelativeSource={RelativeSource TemplatedParent}}">
+                    <Grid.InputBindings>
+                        <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding MaximizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </Grid.InputBindings>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <CustomControls:ImageButton x:Name="MinimizeButton" Style="{DynamicResource ButtonMinStyle}" Command="{Binding MinimizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <CustomControls:ImageButton x:Name="MaximizeButton" Style="{DynamicResource ButtonMaxStyle}" Command="{Binding MaximizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <CustomControls:ImageButton x:Name="CloseButton" Style="{DynamicResource ButtonCloseStyle}" Command="{Binding CloseWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </StackPanel>
+                </Grid>
+                <Grid x:Name="MainContent" Grid.Row="1" Background="{TemplateBinding Background}">
                     <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                 </Grid>
             </Grid>
         </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="WindowState" Value="Maximized">
+                <Setter TargetName="MaximizeButton" Property="Style" Value="{DynamicResource ButtonMaxMaximizedStyle}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style x:Key="BaseWindowStyle" TargetType="{x:Type CustomControls:BaseWindow}">

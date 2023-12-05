@@ -9,6 +9,7 @@
         <!--<ResourceDictionary Source="../ThemeCommonDefine.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
 
+    
     <SolidColorBrush x:Key="BRUSH_BACKGROUND_HOVER">#3300CCCC</SolidColorBrush>
     <SolidColorBrush x:Key="BRUSH_BACKGROUND_PRESSED">#1A00CCCC</SolidColorBrush>
     <SolidColorBrush x:Key="BRUSH_BORDER_NORMAL">#FFFFFFFF</SolidColorBrush>
@@ -22,6 +23,7 @@
     <SolidColorBrush x:Key="BRUSH_MEDIUMDARKBORDERBRUSH" Color="#8B8B8B" />
     <SolidColorBrush x:Key="BRUSH_DISABLED" Color="#aaaaaa" />
     <SolidColorBrush x:Key="BRUSH_HIGHLIGHTED" Color="#4a4a4a" />
+    
 
 
     <LinearGradientBrush x:Key="LINEARBRUSH_NORMALBACKGROUNDBRUSH" StartPoint="0,0" EndPoint="0,1">

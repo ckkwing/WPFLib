@@ -8,12 +8,24 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Shell;
 using Theme.Command;
 
 namespace Theme.CustomControl
 {
     public partial class BaseWindow : Window
     {
+        public Brush TitlebarBackground
+        {
+            get { return (Brush)GetValue(TitlebarBackgroundProperty); }
+            set { SetValue(TitlebarBackgroundProperty, value); }
+        }
+
+        public static readonly DependencyProperty TitlebarBackgroundProperty =
+            DependencyProperty.Register("TitlebarBackground", typeof(Brush),
+             typeof(BaseWindow), new UIPropertyMetadata(Brushes.Transparent));
+
         #region Command
         public ICommand CloseWindowCommand => new GenericCommand()
         {
@@ -30,7 +42,11 @@ namespace Theme.CustomControl
         public ICommand MaximizeWindowCommand => new GenericCommand()
         {
             CanExecuteCallback = (obj) => { return true; },
-            ExecuteCallback = (obj) => WindowState = WindowState.Maximized
+            ExecuteCallback = (obj) =>
+            {
+                WindowState = WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
+                //RaisePropertyChanged(nameof(WindowState));
+            }
         };
 
         //public ICommand EscKeyCommand
@@ -48,8 +64,21 @@ namespace Theme.CustomControl
 
         public BaseWindow()
         {
+            InitializeWindowChrome();
             InitializeStyle();
             Loaded += delegate { InitializeEvent(); };
+        }
+
+        private void InitializeWindowChrome()
+        {
+            WindowChrome.SetWindowChrome(this,
+                new WindowChrome()
+                {
+                    CaptionHeight = 0,
+                    UseAeroCaptionButtons = false,
+
+                    //ResizeBorderThickness = new Thickness(6)
+                });;
         }
 
         private void InitializeStyle()

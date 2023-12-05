@@ -17,9 +17,13 @@
     <None Remove="Default\**" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Resources\Dark\Images\Max-Maximized-hover.png" />
+    <None Remove="Resources\Dark\Images\Max-Maximized-press.png" />
+    <None Remove="Resources\Dark\Images\Max-Maximized.png" />
     <None Remove="Styles\Dark\BaseWindowStyle.xaml" />
     <None Remove="Styles\Dark\Brushs.xaml" />
     <None Remove="Styles\Dark\ButtonStyles.xaml" />
+    <None Remove="Styles\Dark\Images.xaml" />
     <None Remove="Styles\Dark\Theme.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +67,7 @@
     <Page Include="Styles\Dark\ComboBoxStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\Dark\Images.xaml" />
     <Page Include="Styles\Dark\Theme.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -71,6 +76,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Dark\Images\Max-Maximized-hover.png" />
+    <Resource Include="Resources\Dark\Images\Max-Maximized-press.png" />
+    <Resource Include="Resources\Dark\Images\Max-Maximized.png" />
     <Resource Include="Resources\Default\Images\Test.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -90,10 +98,18 @@
   <ItemGroup>
     <Resource Include="Resources\Default\Images\CheckBox\CheckBox_Checked.png" />
     <Resource Include="Resources\Default\Images\CheckBox\CheckBox_Normal.png" />
+    <Resource Include="Resources\Dark\Images\Close-hover.png" />
+    <Resource Include="Resources\Dark\Images\Close-press.png" />
+    <Resource Include="Resources\Dark\Images\Close.png" />
+    <Resource Include="Resources\Dark\Images\Max-hover.png" />
+    <Resource Include="Resources\Dark\Images\Max-press.png" />
+    <Resource Include="Resources\Dark\Images\Max.png" />
+    <Resource Include="Resources\Dark\Images\Min-hover.png" />
+    <Resource Include="Resources\Dark\Images\Min-press.png" />
+    <Resource Include="Resources\Dark\Images\Min.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomControl\Dialog\" />
-    <Folder Include="Resources\Dark\" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG</DefineConstants>

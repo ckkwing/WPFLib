@@ -1,0 +1,9 @@
+﻿<Application x:Class="UITestbed.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:UITestbed"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary Source="/Theme;Component/Styles/Dark/Theme.xaml" />
+    </Application.Resources>
+</Application>

@@ -1,0 +1,25 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore"
+    xmlns:Img="clr-namespace:System.Windows.Media.Imaging;assembly=PresentationCore">
+    <ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Img:BitmapImage x:Key="IMG_BUTTON_MIN" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Min.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_MIN_HOVER" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Min-hover.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_MIN_PRESS" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Min-press.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_MAX" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Max.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_MAX_HOVER" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Max-hover.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_MAX_PRESS" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Max-press.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_MAX_MAXIMIZED" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Max-Maximized.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_MAX_MAXIMIZED_HOVER" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Max-Maximized-hover.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_MAX_MAXIMIZED_PRESS" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Max-Maximized-press.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_CLOSE" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Close.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_CLOSE_HOVER" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Close-hover.png" />
+    <Img:BitmapImage x:Key="IMG_BUTTON_CLOSE_PRESS" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Close-press.png" />
+
+</ResourceDictionary>

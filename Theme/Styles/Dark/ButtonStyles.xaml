@@ -4,8 +4,12 @@
     xmlns:System="clr-namespace:System;assembly=mscorlib"
     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
-    xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore">
+    xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore"
+    xmlns:CustomControl="clr-namespace:Theme.CustomControl">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../ThemeCommonDefine.xaml" />
+        <ResourceDictionary Source="Brushs.xaml" />
+        <ResourceDictionary Source="Images.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="RoundButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
@@ -30,11 +34,74 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderBrush" Value="{DynamicResource BRUSH_BORDER_HOVER}"/>
                             <Setter Property="Background" Value="{DynamicResource BRUSH_BACKGROUND_HOVER}"/>
-                            <Setter TargetName="GelButtonContent" Property="TextElement.Foreground" Value="Red" />
+                            <!--<Setter TargetName="GelButtonContent" Property="TextElement.Foreground" Value="Red" />-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
+
+    <ControlTemplate x:Key="ImageButtonTemplate" TargetType="{x:Type CustomControl:ImageButton}">
+        <StackPanel Orientation="Horizontal" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+            <Image x:Name="image"  HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Source="{TemplateBinding Image}"
+                               Height="{TemplateBinding ImageHeight}"
+                               Width="{TemplateBinding ImageWidth}"/>
+            <TextBlock Margin="10,0,0,0" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"  Text="{TemplateBinding Text}"/>
+        </StackPanel>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Source" TargetName="image" Value="{Binding ImageOver, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type CustomControl:ImageButton}}}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Source" TargetName="image" Value="{Binding ImagePressed, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type CustomControl:ImageButton}}}"/>
+            </Trigger>
+
+            <Trigger Property="IsEnabled" Value="True">
+                <Setter Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="{DynamicResource OPACITY_DISABLED}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type CustomControl:ImageButton}">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template" Value="{StaticResource ImageButtonTemplate}" />
+    </Style>
+
+    <Style x:Key="ButtonMinStyle" TargetType="{x:Type CustomControl:ImageButton}" BasedOn="{StaticResource {x:Type CustomControl:ImageButton}}">
+        <Setter Property="Image" Value="{DynamicResource IMG_BUTTON_MIN}" />
+        <Setter Property="ImageOver" Value="{DynamicResource IMG_BUTTON_MIN_HOVER}" />
+        <Setter Property="ImagePressed" Value="{DynamicResource IMG_BUTTON_MIN_PRESS}" />
+        <Setter Property="ImageWidth" Value="24" />
+        <Setter Property="ImageHeight" Value="24" />
+    </Style>
+
+    <Style x:Key="ButtonMaxStyle" TargetType="{x:Type CustomControl:ImageButton}" BasedOn="{StaticResource {x:Type CustomControl:ImageButton}}">
+        <Setter Property="Image" Value="{DynamicResource IMG_BUTTON_MAX}" />
+        <Setter Property="ImageOver" Value="{DynamicResource IMG_BUTTON_MAX_HOVER}" />
+        <Setter Property="ImagePressed" Value="{DynamicResource IMG_BUTTON_MAX_PRESS}" />
+        <Setter Property="ImageWidth" Value="24" />
+        <Setter Property="ImageHeight" Value="24" />
+    </Style>
+
+    <Style x:Key="ButtonMaxMaximizedStyle" TargetType="{x:Type CustomControl:ImageButton}" BasedOn="{StaticResource {x:Type CustomControl:ImageButton}}">
+        <Setter Property="Image" Value="{DynamicResource IMG_BUTTON_MAX_MAXIMIZED}" />
+        <Setter Property="ImageOver" Value="{DynamicResource IMG_BUTTON_MAX_MAXIMIZED_HOVER}" />
+        <Setter Property="ImagePressed" Value="{DynamicResource IMG_BUTTON_MAX_MAXIMIZED_PRESS}" />
+        <Setter Property="ImageWidth" Value="24" />
+        <Setter Property="ImageHeight" Value="24" />
+    </Style>
+    
+    <Style x:Key="ButtonCloseStyle" TargetType="{x:Type CustomControl:ImageButton}" BasedOn="{StaticResource {x:Type CustomControl:ImageButton}}">
+        <Setter Property="Image" Value="{DynamicResource IMG_BUTTON_CLOSE}" />
+        <Setter Property="ImageOver" Value="{DynamicResource IMG_BUTTON_CLOSE_HOVER}" />
+        <Setter Property="ImagePressed" Value="{DynamicResource IMG_BUTTON_CLOSE_PRESS}" />
+        <Setter Property="ImageWidth" Value="24" />
+        <Setter Property="ImageHeight" Value="24" />
+    </Style>
+
 </ResourceDictionary>
