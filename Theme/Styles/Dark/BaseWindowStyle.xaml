@@ -5,42 +5,57 @@
     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
     xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore"
-    xmlns:CustomControls="clr-namespace:Theme.CustomControl">
+    xmlns:CustomControls="clr-namespace:Theme.CustomControl"
+    xmlns:Converter="clr-namespace:Theme.Converters">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../ThemeCommonDefine.xaml" />
+        <!--<ResourceDictionary Source="../ThemeCommonDefine.xaml" />
         <ResourceDictionary Source="Images.xaml" />
-        <ResourceDictionary Source="ButtonStyles.xaml" />
+        <ResourceDictionary Source="ButtonStyles.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
 
+    <Converter:WidthAndHeightToRectConverter x:Key="WidthAndHeightToRectConverter" />
+    <Converter:SystemWorkAreaToMarginConverter x:Key="SystemWorkAreaToMarginConverter" />
+
     <ControlTemplate x:Key="BaseWindowControlTemplate" TargetType="{x:Type CustomControls:BaseWindow}">
-        <Border Background="Transparent" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid x:Name="TitleBar" Grid.Row="0" Background="{Binding TitlebarBackground, RelativeSource={RelativeSource TemplatedParent}}">
-                    <Grid.InputBindings>
-                        <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding MaximizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
-                    </Grid.InputBindings>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <CustomControls:ImageButton x:Name="MinimizeButton" Style="{DynamicResource ButtonMinStyle}" Command="{Binding MinimizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
-                        <CustomControls:ImageButton x:Name="MaximizeButton" Style="{DynamicResource ButtonMaxStyle}" Command="{Binding MaximizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
-                        <CustomControls:ImageButton x:Name="CloseButton" Style="{DynamicResource ButtonCloseStyle}" Command="{Binding CloseWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
-                    </StackPanel>
+        <AdornerDecorator >
+            <CustomControls:ClippingBorder x:Name="Wrapper" Background="Transparent" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}}">
+                <Grid x:Name="GridWrapper">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="TitleBar" Grid.Row="0" Background="{Binding TitlebarBackground, RelativeSource={RelativeSource TemplatedParent}}">
+                        <Grid.InputBindings>
+                            <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding MaximizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Grid.InputBindings>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="{TemplateBinding Title}" Style="{DynamicResource StyleTextMainbody1}" Margin="10,0,0,0" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                            <CustomControls:ImageButton x:Name="MinimizeButton" Style="{DynamicResource ButtonMinStyle}" Command="{Binding MinimizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <CustomControls:ImageButton x:Name="MaximizeButton" Style="{DynamicResource ButtonMaxStyle}" Command="{Binding MaximizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <CustomControls:ImageButton x:Name="CloseButton" Style="{DynamicResource ButtonCloseStyle}" Command="{Binding CloseWindowCommand, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid x:Name="MainContent" Grid.Row="1" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
                 </Grid>
-                <Grid x:Name="MainContent" Grid.Row="1" Background="{TemplateBinding Background}">
-                    <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                </Grid>
-            </Grid>
-        </Border>
+            </CustomControls:ClippingBorder>
+        </AdornerDecorator>
         <ControlTemplate.Triggers>
             <Trigger Property="WindowState" Value="Maximized">
                 <Setter TargetName="MaximizeButton" Property="Style" Value="{DynamicResource ButtonMaxMaximizedStyle}" />
+                <Setter TargetName="Wrapper" Property="BorderThickness" Value="0" />
+                <Setter TargetName="Wrapper" Property="CornerRadius" Value="0" />
+                <!--<Setter TargetName="Wrapper" Property="Margin" Value="6" />-->
+                <!--<Setter Property="MaxWidth" TargetName="GridWrapper" Value="{Binding Source={x:Static SystemParameters.WorkArea},Path=Width}" />
+                <Setter Property="MaxHeight" TargetName="GridWrapper" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}"/>-->
+                <Setter TargetName="Wrapper" Property="Margin" Value="{Binding Converter={StaticResource SystemWorkAreaToMarginConverter}}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -48,6 +63,7 @@
     <Style x:Key="BaseWindowStyle" TargetType="{x:Type CustomControls:BaseWindow}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Setter Property="TitlebarBackground" Value="{DynamicResource BRUSH_BLACK}" />
         <Setter Property="FocusVisualStyle" Value="{DynamicResource NullFocusVisualStyle}" />
         <Setter Property="Template" Value="{DynamicResource BaseWindowControlTemplate}"/>
     </Style>

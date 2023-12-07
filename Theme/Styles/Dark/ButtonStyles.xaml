@@ -7,9 +7,9 @@
     xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore"
     xmlns:CustomControl="clr-namespace:Theme.CustomControl">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../ThemeCommonDefine.xaml" />
+        <!--<ResourceDictionary Source="../ThemeCommonDefine.xaml" />
         <ResourceDictionary Source="Brushs.xaml" />
-        <ResourceDictionary Source="Images.xaml" />
+        <ResourceDictionary Source="Images.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="RoundButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">

@@ -26,6 +26,16 @@ namespace Theme.CustomControl
             DependencyProperty.Register("TitlebarBackground", typeof(Brush),
              typeof(BaseWindow), new UIPropertyMetadata(Brushes.Transparent));
 
+        public CornerRadius CornerRadius
+        {
+            get { return (CornerRadius)GetValue(CornerRadiusProperty); }
+            set { SetValue(CornerRadiusProperty, value); }
+        }
+
+        public static readonly DependencyProperty CornerRadiusProperty =
+            DependencyProperty.Register("CornerRadius", typeof(CornerRadius),
+             typeof(BaseWindow), new UIPropertyMetadata(new CornerRadius(0)));
+
         #region Command
         public ICommand CloseWindowCommand => new GenericCommand()
         {
@@ -45,7 +55,6 @@ namespace Theme.CustomControl
             ExecuteCallback = (obj) =>
             {
                 WindowState = WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
-                //RaisePropertyChanged(nameof(WindowState));
             }
         };
 
@@ -64,9 +73,12 @@ namespace Theme.CustomControl
 
         public BaseWindow()
         {
-            InitializeWindowChrome();
             InitializeStyle();
-            Loaded += delegate { InitializeEvent(); };
+            Loaded += delegate
+            {
+                InitializeWindowChrome();
+                InitializeEvent();
+            };
         }
 
         private void InitializeWindowChrome()
@@ -76,9 +88,12 @@ namespace Theme.CustomControl
                 {
                     CaptionHeight = 0,
                     UseAeroCaptionButtons = false,
-
-                    //ResizeBorderThickness = new Thickness(6)
-                });;
+                    GlassFrameThickness = new Thickness(0),
+                    CornerRadius = CornerRadius,
+                    ResizeBorderThickness = new Thickness(6),
+                    NonClientFrameEdges = NonClientFrameEdges.None
+                    //NonClientFrameEdges = NonClientFrameEdges.Left | NonClientFrameEdges.Top | NonClientFrameEdges.Right | NonClientFrameEdges.Bottom
+                });
         }
 
         private void InitializeStyle()
@@ -106,7 +121,7 @@ namespace Theme.CustomControl
                         this.DragMove();
                     }
                     catch (InvalidOperationException ex)
-                    { 
+                    {
                         Trace.TraceError("DragMove exception", ex);
                     }
                 };

@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UITestbed"
         xmlns:CustomControl="clr-namespace:Theme.CustomControl;assembly=Theme"
-        mc:Ignorable="d" WindowStyle="None" Background="White" TitlebarBackground="Black" 
+        mc:Ignorable="d"  Background="Black" WindowStyle="None" CornerRadius="16"
         Title="MainWindow" Height="450" Width="800">
     
     <Grid>
-        <Image Source="{StaticResource IMG_BUTTON_CLOSE}" />
+        <Image Source="{DynamicResource IMG_BUTTON_CLOSE}" />
     </Grid>
 </CustomControl:BaseWindow>

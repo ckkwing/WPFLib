@@ -12,8 +12,11 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="CustomControl\Dialog\**" />
     <Compile Remove="Default\**" />
+    <EmbeddedResource Remove="CustomControl\Dialog\**" />
     <EmbeddedResource Remove="Default\**" />
+    <None Remove="CustomControl\Dialog\**" />
     <None Remove="Default\**" />
   </ItemGroup>
   <ItemGroup>
@@ -25,9 +28,6 @@
     <None Remove="Styles\Dark\ButtonStyles.xaml" />
     <None Remove="Styles\Dark\Images.xaml" />
     <None Remove="Styles\Dark\Theme.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Prism.Core" Version="7.0.0.396" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -109,7 +109,12 @@
     <Resource Include="Resources\Dark\Images\Min.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CustomControl\Dialog\" />
+    <None Update="1. Documents\Border.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomControl\Dialogs\" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG</DefineConstants>

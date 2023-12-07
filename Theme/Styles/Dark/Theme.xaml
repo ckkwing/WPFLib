@@ -10,11 +10,11 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../ThemeCommonDefine.xaml" />
         <ResourceDictionary Source="Brushs.xaml" />
+        <ResourceDictionary Source="Images.xaml" />
         <ResourceDictionary Source="ButtonStyles.xaml" />
         <ResourceDictionary Source="ComboBoxStyles.xaml" />
         <ResourceDictionary Source="BaseWindowStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
-
 
     <!--#region TextBlock-->
     <Style  TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
@@ -43,6 +43,7 @@
         <Setter Property="FontSize" Value="{DynamicResource FONTSIZE_UNDERLINED}" />
     </Style>
     <!--#endregion-->
+
     
     <!--#region RadioButton-->
     <Style x:Key="RectangleRadioButtonStyle" TargetType="{x:Type RadioButton}">

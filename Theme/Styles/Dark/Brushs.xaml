@@ -6,7 +6,6 @@
     xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
     xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore">
     <ResourceDictionary.MergedDictionaries>
-        <!--<ResourceDictionary Source="../ThemeCommonDefine.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
 
     
