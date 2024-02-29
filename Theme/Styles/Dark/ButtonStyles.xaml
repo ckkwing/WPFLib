@@ -12,6 +12,15 @@
         <ResourceDictionary Source="Images.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
 
+    <System:Double x:Key="BUTTON_WIDTH_DEFAULT">80</System:Double>
+    <System:Double x:Key="BUTTON_HEIGH_DEFAULT">26</System:Double>
+
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="{DynamicResource BUTTON_WIDTH_DEFAULT}" />
+        <Setter Property="Height" Value="{DynamicResource BUTTON_HEIGH_DEFAULT}" />
+    </Style>
+    
+
     <Style x:Key="RoundButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="BorderBrush" Value="{DynamicResource BRUSH_BORDER_NORMAL}" />
         <Setter Property="Background" Value="{DynamicResource BRUSH_BLACK}" />
