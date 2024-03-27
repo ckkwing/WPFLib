@@ -67,4 +67,8 @@
         <Setter Property="FocusVisualStyle" Value="{DynamicResource NullFocusVisualStyle}" />
         <Setter Property="Template" Value="{DynamicResource BaseWindowControlTemplate}"/>
     </Style>
+
+    <Style x:Key="WindowChromeStyle" TargetType="{x:Type Window}">
+        
+    </Style>
 </ResourceDictionary>
