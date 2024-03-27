@@ -76,7 +76,7 @@ namespace Theme.CustomControl
             InitializeStyle();
             Loaded += delegate
             {
-                InitializeWindowChrome();
+                //InitializeWindowChrome();
                 InitializeEvent();
             };
         }
@@ -100,9 +100,9 @@ namespace Theme.CustomControl
         {
             if (null == Application.Current)
                 return;
-            if (!Application.Current.Resources.Contains("BaseWindowStyle"))
+            if (!Application.Current.Resources.Contains("WindowChromeStyle"))
                 return;
-            Style = (Style)Application.Current.Resources["BaseWindowStyle"];
+            Style = (Style)Application.Current.Resources["WindowChromeStyle"];
         }
 
         private void InitializeEvent()
