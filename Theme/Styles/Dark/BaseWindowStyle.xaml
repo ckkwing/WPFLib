@@ -6,7 +6,8 @@
     xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
     xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore"
     xmlns:CustomControls="clr-namespace:Theme.CustomControl"
-    xmlns:Converter="clr-namespace:Theme.Converters">
+    xmlns:Converter="clr-namespace:Theme.Converters"
+    xmlns:Helper="clr-namespace:Theme.Helper">
     <ResourceDictionary.MergedDictionaries>
         <!--<ResourceDictionary Source="../ThemeCommonDefine.xaml" />
         <ResourceDictionary Source="Images.xaml" />
@@ -114,6 +115,15 @@
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <!--#region Maximized-->
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter TargetName="MaximizeButton" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="RestoreButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="WindowBorder" Property="BorderThickness" Value="0" />
+                            <Setter TargetName="WindowBorder" Property="Padding" Value="{x:Static SystemParameters.WindowResizeBorderThickness}" />
+                            <Setter Property="Margin" TargetName="LayoutRoot" Value="{x:Static Helper:WindowParameters.PaddedBorderThickness}" />
+                        </Trigger>
+                        <!--#endregion-->
                         <!--#region ResizeGrip-->
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
