@@ -13,7 +13,7 @@ namespace Theme.Native
 {
     public static class NativeMethods
     {
-        public const int SM_CXPADDEDBORDER = 4;
+        public const int SM_CXPADDEDBORDER = 92;
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
