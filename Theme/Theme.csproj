@@ -28,6 +28,7 @@
     <None Remove="Styles\Dark\ButtonStyles.xaml" />
     <None Remove="Styles\Dark\Images.xaml" />
     <None Remove="Styles\Dark\Theme.xaml" />
+    <None Remove="Styles\Dark\WindowChromeStyle.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -57,6 +58,9 @@
     </Page>
     <Page Include="CustomControl\Loading\CircularLoading2.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Dark\WindowChromeStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Dark\BaseWindowStyle.xaml" />

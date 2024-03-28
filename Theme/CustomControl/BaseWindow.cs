@@ -100,9 +100,9 @@ namespace Theme.CustomControl
         {
             if (null == Application.Current)
                 return;
-            if (!Application.Current.Resources.Contains("WindowChromeStyle"))
+            if (!Application.Current.Resources.Contains("BaseWindowStyle"))
                 return;
-            Style = (Style)Application.Current.Resources["WindowChromeStyle"];
+            Style = (Style)Application.Current.Resources["BaseWindowStyle"];
         }
 
         private void InitializeEvent()
