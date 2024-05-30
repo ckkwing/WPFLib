@@ -21,5 +21,6 @@
     <Img:BitmapImage x:Key="IMG_BUTTON_CLOSE" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Close.png" />
     <Img:BitmapImage x:Key="IMG_BUTTON_CLOSE_HOVER" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Close-hover.png" />
     <Img:BitmapImage x:Key="IMG_BUTTON_CLOSE_PRESS" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Close-press.png" />
+    <Img:BitmapImage x:Key="IMG_INDICATOR_STATIC" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Indicator-static.png" />
 
 </ResourceDictionary>
