@@ -8,18 +8,21 @@ using System.Windows;
 
 namespace Theme.Events
 {
-    //Sample
-
-    //<Image Source = "{StaticResource IMG_AI_BOTSONIC}" Width="42" Height="45" SnapsToDevicePixels="True" Canvas.Bottom="40" Canvas.Right="40"
-    //       behavior:DragMoveBehavior.CanDragMove="True" events:MouseAttachedEvents.IsEnabled="True">
-    //    <i:Interaction.Triggers>
-    //        <events:RoutedEventTrigger RoutedEvent = "events:MouseAttachedEvents.ShortPress" >
-    //            < i:InvokeCommandAction Command = "{Binding Path=AIStoryCommand}" />
-    //        </ events:RoutedEventTrigger>
-    //    </i:Interaction.Triggers>
-    //</Image>
-
-
+    /// <summary>
+    /// This class extends Mouse events as attached events
+    /// </summary>
+    /// <example>
+    /// <![CDATA[
+    ///<Image Source = "{StaticResource IMG_AI_BOTSONIC}" Width="42" Height="45" SnapsToDevicePixels="True" Canvas.Bottom="40" Canvas.Right="40"
+    ///       behavior:DragMoveBehavior.CanDragMove="True" events:MouseAttachedEvents.IsEnabled="True">
+    ///    <i:Interaction.Triggers>
+    ///        <events:RoutedEventTrigger RoutedEvent = "events:MouseAttachedEvents.ShortPress" >
+    ///            < i:InvokeCommandAction Command = "{Binding Path=AIStoryCommand}" />
+    ///        </ events:RoutedEventTrigger>
+    ///    </i:Interaction.Triggers>
+    ///</Image>
+    /// ]]>
+    /// </example>
     public static class MouseAttachedEvents
     {
         public readonly static TimeSpan LongPressInterval = TimeSpan.FromSeconds(1);

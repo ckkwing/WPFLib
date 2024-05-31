@@ -8,17 +8,22 @@ using System.Windows.Interactivity;
 
 namespace Theme.Events
 {
-    //Sample
 
-    //<Image Source = "{StaticResource IMG_AI_BOTSONIC}" Width="42" Height="45" SnapsToDevicePixels="True" Canvas.Bottom="40" Canvas.Right="40"
-    //       behavior:DragMoveBehavior.CanDragMove="True" events:MouseAttachedEvents.IsEnabled="True">
-    //    <i:Interaction.Triggers>
-    //        <events:RoutedEventTrigger RoutedEvent = "events:MouseAttachedEvents.ShortPress" >
-    //            < i:InvokeCommandAction Command = "{Binding Path=AIStoryCommand}" />
-    //        </ events:RoutedEventTrigger>
-    //    </i:Interaction.Triggers>
-    //</Image>
-
+    /// <summary>
+    /// This class support to trigger attached events
+    /// </summary>
+    /// <example>
+    /// <![CDATA[
+    ///<Image Source = "{StaticResource IMG_AI_BOTSONIC}" Width="42" Height="45" SnapsToDevicePixels="True" Canvas.Bottom="40" Canvas.Right="40"
+    ///       behavior:DragMoveBehavior.CanDragMove="True" events:MouseAttachedEvents.IsEnabled="True">
+    ///    <i:Interaction.Triggers>
+    ///        <events:RoutedEventTrigger RoutedEvent = "events:MouseAttachedEvents.ShortPress" >
+    ///            < i:InvokeCommandAction Command = "{Binding Path=AIStoryCommand}" />
+    ///        </ events:RoutedEventTrigger>
+    ///    </i:Interaction.Triggers>
+    ///</Image>
+    /// ]]>
+    /// </example>
     public class RoutedEventTrigger : EventTriggerBase<DependencyObject>
     {
         private RoutedEvent _routedEvent;

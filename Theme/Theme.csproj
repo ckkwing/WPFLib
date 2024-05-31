@@ -33,6 +33,7 @@
     <None Remove="Styles\Dark\ButtonStyles.xaml" />
     <None Remove="Styles\Dark\Images.xaml" />
     <None Remove="Styles\Dark\Theme.xaml" />
+    <None Remove="Styles\Dark\ToolTipStyles.xaml" />
     <None Remove="Styles\Dark\WindowChromeStyle.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +74,9 @@
     </Page>
     <Page Include="CustomControl\Loading\CircularLoading2.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Dark\ToolTipStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Dark\WindowChromeStyle.xaml">
