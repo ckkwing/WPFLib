@@ -18,7 +18,10 @@
             </Image.RenderTransform>
             <Image.Triggers>
                 <EventTrigger RoutedEvent="Loaded">
-                    <BeginStoryboard Storyboard="{StaticResource AnimationStoryboard}" />
+                    <BeginStoryboard Name="AnimationStoryboard" Storyboard="{StaticResource AnimationStoryboard}" />
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Unloaded">
+                    <StopStoryboard BeginStoryboardName="AnimationStoryboard" />
                 </EventTrigger>
             </Image.Triggers>
         </Image>
