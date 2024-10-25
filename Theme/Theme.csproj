@@ -99,6 +99,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\CommonUtility\CommonUtility\CommonUtility.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\Dark\Images\Indicator-static.png" />
     <Resource Include="Resources\Dark\Images\Max-Maximized-hover.png" />
     <Resource Include="Resources\Dark\Images\Max-Maximized-press.png" />
