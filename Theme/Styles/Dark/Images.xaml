@@ -22,5 +22,6 @@
     <Img:BitmapImage x:Key="IMG_BUTTON_CLOSE_HOVER" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Close-hover.png" />
     <Img:BitmapImage x:Key="IMG_BUTTON_CLOSE_PRESS" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Close-press.png" />
     <Img:BitmapImage x:Key="IMG_INDICATOR_STATIC" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Indicator-static.png" />
-
+    <Img:BitmapImage x:Key="IMG_INDICATOR_SHOW_PASSWORD" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Show-Password.png" />
+    <Img:BitmapImage x:Key="IMG_INDICATOR_HIDE_PASSWORD" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Hide-Password.png" />
 </ResourceDictionary>

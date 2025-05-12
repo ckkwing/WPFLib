@@ -12,6 +12,7 @@
         <ResourceDictionary Source="Brushs.xaml" />
         <ResourceDictionary Source="Images.xaml" />
         <ResourceDictionary Source="ButtonStyles.xaml" />
+        <ResourceDictionary Source="PasswordBoxStyle.xaml" />
         <ResourceDictionary Source="ComboBoxStyles.xaml" />
         <ResourceDictionary Source="BaseWindowStyle.xaml" />
         <ResourceDictionary Source="WindowChromeStyle.xaml" />

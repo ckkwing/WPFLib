@@ -24,14 +24,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="CustomControl\Loading\CircleImageLoading.xaml" />
+    <None Remove="Resources\Dark\Images\Hide-Password.png" />
     <None Remove="Resources\Dark\Images\Indicator-static.png" />
     <None Remove="Resources\Dark\Images\Max-Maximized-hover.png" />
     <None Remove="Resources\Dark\Images\Max-Maximized-press.png" />
     <None Remove="Resources\Dark\Images\Max-Maximized.png" />
+    <None Remove="Resources\Dark\Images\Show-Password.png" />
     <None Remove="Styles\Dark\BaseWindowStyle.xaml" />
     <None Remove="Styles\Dark\Brushs.xaml" />
     <None Remove="Styles\Dark\ButtonStyles.xaml" />
+    <None Remove="Styles\Dark\Converters.xaml" />
     <None Remove="Styles\Dark\Images.xaml" />
+    <None Remove="Styles\Dark\PasswordBoxStyle.xaml" />
     <None Remove="Styles\Dark\Theme.xaml" />
     <None Remove="Styles\Dark\ToolTipStyles.xaml" />
     <None Remove="Styles\Dark\WindowChromeStyle.xaml" />
@@ -76,6 +80,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\Dark\Converters.xaml" />
+    <Page Include="Styles\Dark\PasswordBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Dark\ToolTipStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,10 +110,12 @@
     <ProjectReference Include="..\..\CommonUtility\CommonUtility\CommonUtility.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Dark\Images\Hide-Password.png" />
     <Resource Include="Resources\Dark\Images\Indicator-static.png" />
     <Resource Include="Resources\Dark\Images\Max-Maximized-hover.png" />
     <Resource Include="Resources\Dark\Images\Max-Maximized-press.png" />
     <Resource Include="Resources\Dark\Images\Max-Maximized.png" />
+    <Resource Include="Resources\Dark\Images\Show-Password.png" />
     <Resource Include="Resources\Default\Images\Test.jpg" />
   </ItemGroup>
   <ItemGroup>
