@@ -24,4 +24,6 @@
     <Img:BitmapImage x:Key="IMG_INDICATOR_STATIC" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Indicator-static.png" />
     <Img:BitmapImage x:Key="IMG_INDICATOR_SHOW_PASSWORD" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Show-Password.png" />
     <Img:BitmapImage x:Key="IMG_INDICATOR_HIDE_PASSWORD" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Hide-Password.png" />
+    <Img:BitmapImage x:Key="IMG_SMALL_ARROW_UP" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Small-Arrow-Up.png" />
+    <Img:BitmapImage x:Key="IMG_SMALL_ARROW_DOWN" UriSource="pack://application:,,,/Theme;component/Resources/Dark/Images/Small-Arrow-Down.png" />
 </ResourceDictionary>

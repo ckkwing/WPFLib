@@ -30,11 +30,14 @@
     <None Remove="Resources\Dark\Images\Max-Maximized-press.png" />
     <None Remove="Resources\Dark\Images\Max-Maximized.png" />
     <None Remove="Resources\Dark\Images\Show-Password.png" />
+    <None Remove="Resources\Dark\Images\Small-Arrow-Down.png" />
+    <None Remove="Resources\Dark\Images\Small-Arrow-Up.png" />
     <None Remove="Styles\Dark\BaseWindowStyle.xaml" />
     <None Remove="Styles\Dark\Brushs.xaml" />
     <None Remove="Styles\Dark\ButtonStyles.xaml" />
     <None Remove="Styles\Dark\Converters.xaml" />
     <None Remove="Styles\Dark\Images.xaml" />
+    <None Remove="Styles\Dark\NumericUpDownStyles.xaml" />
     <None Remove="Styles\Dark\PasswordBoxStyle.xaml" />
     <None Remove="Styles\Dark\Theme.xaml" />
     <None Remove="Styles\Dark\ToolTipStyles.xaml" />
@@ -81,6 +84,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Dark\Converters.xaml" />
+    <Page Include="Styles\Dark\NumericUpDownStyles.xaml" />
     <Page Include="Styles\Dark\PasswordBoxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,6 +120,8 @@
     <Resource Include="Resources\Dark\Images\Max-Maximized-press.png" />
     <Resource Include="Resources\Dark\Images\Max-Maximized.png" />
     <Resource Include="Resources\Dark\Images\Show-Password.png" />
+    <Resource Include="Resources\Dark\Images\Small-Arrow-Down.png" />
+    <Resource Include="Resources\Dark\Images\Small-Arrow-Up.png" />
     <Resource Include="Resources\Default\Images\Test.jpg" />
   </ItemGroup>
   <ItemGroup>
