@@ -10,10 +10,8 @@ using Theme.Extensions;
 
 namespace Theme.Converters
 {
-    public class EnumToDescriptionConverter : IValueConverter
+    public class EnumToLocalizableDescriptionConverter : IValueConverter
     {
-        #region IValueConverter Members
-
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             try
@@ -27,7 +25,7 @@ namespace Theme.Converters
                     return string.Empty;
 
                 ICustomAttributeProvider fieldInfo = value.GetType().GetField(valueString);
-                return fieldInfo.GetDescription();
+                return fieldInfo.GetLocalizedDescription();
             }
             catch (Exception ex)
             {
@@ -39,13 +37,6 @@ namespace Theme.Converters
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new NotImplementedException();
-        }
-
-        #endregion
-
-        public static string Parse(object value)
-        {
-            return (string)new EnumToDescriptionConverter().Convert(value, null, null, System.Globalization.CultureInfo.InvariantCulture);
         }
     }
 }

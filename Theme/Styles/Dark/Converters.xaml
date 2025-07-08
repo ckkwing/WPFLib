@@ -6,6 +6,35 @@
     <converters:NotConverter x:Key="NotConverter" />
     <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
     <converters:StringToVisibilityConverter x:Key="InvertingStringToVisibilityConverter" Inverse="True" />
+    <converters:OrValuesToBooleanConverter x:Key="OrValuesToBooleanConverter" />
+    <converters:CompositeConverter x:Key="CompositeConverter" />
+    <converters:CompositeMultiValueConverter x:Key="CompositeMultiValueConverter" />
+    <converters:ObjectExistsConverter x:Key="ObjectExistsConverter" />
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+    <converters:CompositeConverter x:Key="InvertingBooleanToVisibilityConverter">
+        <converters:NotConverter/>
+        <BooleanToVisibilityConverter/>
+    </converters:CompositeConverter>
+
+    <converters:CompositeMultiValueConverter x:Key="AndBooleansToVisibilityConverter">
+        <converters:CompositeMultiValueConverter.MultiValueConverter>
+            <converters:AndValuesToBooleanConverter/>
+        </converters:CompositeMultiValueConverter.MultiValueConverter>
+        <BooleanToVisibilityConverter/>
+    </converters:CompositeMultiValueConverter>
+
+    <converters:CompositeMultiValueConverter x:Key="OrBooleansToVisibilityConverter">
+        <converters:CompositeMultiValueConverter.MultiValueConverter>
+            <converters:OrValuesToBooleanConverter/>
+        </converters:CompositeMultiValueConverter.MultiValueConverter>
+        <BooleanToVisibilityConverter/>
+    </converters:CompositeMultiValueConverter>
+
+    <converters:CompositeConverter x:Key="ObjectExistsToVisibilityConverter">
+        <converters:ObjectExistsConverter/>
+        <BooleanToVisibilityConverter/>
+    </converters:CompositeConverter>
 
     <converters:CompositeConverter x:Key="ObjectNotExistsToVisibilityConverter">
         <converters:ObjectExistsConverter/>
@@ -13,9 +42,42 @@
         <BooleanToVisibilityConverter/>
     </converters:CompositeConverter>
 
-    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-    <converters:CompositeConverter x:Key="InvertingBooleanToVisibilityConverter">
+    <converters:CompositeConverter x:Key="ObjectNotExistsConverter">
+        <converters:ObjectExistsConverter/>
+        <converters:NotConverter/>
+    </converters:CompositeConverter>
+
+    <converters:CompositeMultiValueConverter x:Key="InvertingOrValuesToBooleanConverter">
+        <converters:CompositeMultiValueConverter.MultiValueConverter>
+            <converters:OrValuesToBooleanConverter/>
+        </converters:CompositeMultiValueConverter.MultiValueConverter>
+        <converters:NotConverter/>
+    </converters:CompositeMultiValueConverter>
+
+    <converters:CompositeMultiValueConverter x:Key="OrInvertingBooleansToVisibilityConverter">
+        <converters:CompositeMultiValueConverter.MultiValueConverter>
+            <converters:OrValuesToBooleanConverter/>
+        </converters:CompositeMultiValueConverter.MultiValueConverter>
         <converters:NotConverter/>
         <BooleanToVisibilityConverter/>
-    </converters:CompositeConverter>
+    </converters:CompositeMultiValueConverter>
+
+    <converters:CompositeMultiValueConverter x:Key="OrVisibilitiesToVisibilityConverter">
+        <converters:CompositeMultiValueConverter.MultiValueConverter>
+            <converters:OrVisibilitiesToVisibilityConverter/>
+        </converters:CompositeMultiValueConverter.MultiValueConverter>
+    </converters:CompositeMultiValueConverter>
+
+    <converters:CompositeMultiValueConverter x:Key="AndVisibilitiesToVisibilityConverter">
+        <converters:CompositeMultiValueConverter.MultiValueConverter>
+            <converters:AndVisibilitiesToVisibilityConverter/>
+        </converters:CompositeMultiValueConverter.MultiValueConverter>
+    </converters:CompositeMultiValueConverter>
+
+    <converters:CompositeMultiValueConverter x:Key="InvertingAndVisibilitiesToVisibilityConverter">
+        <converters:CompositeMultiValueConverter.MultiValueConverter>
+            <converters:InvertingAndVisibilitiesToVisibilityConverter/>
+        </converters:CompositeMultiValueConverter.MultiValueConverter>
+    </converters:CompositeMultiValueConverter>
+    
 </ResourceDictionary>

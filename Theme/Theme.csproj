@@ -35,6 +35,7 @@
     <None Remove="Styles\Dark\BaseWindowStyle.xaml" />
     <None Remove="Styles\Dark\Brushs.xaml" />
     <None Remove="Styles\Dark\ButtonStyles.xaml" />
+    <None Remove="Styles\Dark\CircularStyles.xaml" />
     <None Remove="Styles\Dark\Converters.xaml" />
     <None Remove="Styles\Dark\Images.xaml" />
     <None Remove="Styles\Dark\NumericUpDownStyles.xaml" />
@@ -44,6 +45,9 @@
     <None Remove="Styles\Dark\WindowChromeStyle.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing">
+      <HintPath>..\..\..\3rd\Blend\v4.0\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Expression.Interactions">
       <HintPath>..\3rdparty\Expression\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
@@ -83,6 +87,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\CircularStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Dark\Converters.xaml" />
     <Page Include="Styles\Dark\NumericUpDownStyles.xaml" />
     <Page Include="Styles\Dark\PasswordBoxStyle.xaml">
@@ -94,11 +101,15 @@
     <Page Include="Styles\Dark\WindowChromeStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\Dark\BaseWindowStyle.xaml" />
+    <Page Include="Styles\Dark\BaseWindowStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Dark\Brushs.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\Dark\ButtonStyles.xaml" />
+    <Page Include="Styles\Dark\ButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Dark\ComboBoxStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

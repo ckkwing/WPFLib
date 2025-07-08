@@ -15,6 +15,18 @@ namespace Theme.CustomControl
 {
     public partial class ChromeBaseWindow : Window
     {
+        public object FunctionBar
+        {
+            get { return GetValue(FunctionBarProperty); }
+            set
+            {
+                SetValue(FunctionBarProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty FunctionBarProperty = DependencyProperty.Register("FunctionBar", typeof(object), typeof(ChromeBaseWindow), new FrameworkPropertyMetadata(null));
+
+
         #region Command
         public ICommand CloseWindowCommand => new GenericCommand()
         {
