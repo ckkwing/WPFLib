@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,8 +12,25 @@ using static Theme.Native.NativeMethods;
 
 namespace Theme.Helper
 {
-    internal static class DpiHelper
+    /// <summary>
+    /// 物理像素 (px) = DIP × (当前DPI缩放比例)
+    /// 缩放比例	系统 DPI	缩放因子
+    ///100%	96	1.0
+    ///125%	120	1.25
+    ///150%	144	1.5
+    ///175%	168	1.75
+    ///200%	192	2.0
+    ///250%	240	2.5
+    /// </summary>
+    public static class DpiHelper
     {
+        #region Windows 10+
+        /// <example>
+        /// IntPtr hwnd = new WindowInteropHelper(this).Handle;
+        /// uint dpi = NativeMethods.Win10PlusNativeMethods.GetDpiForWindow(hwnd);
+        /// </example>
+        #endregion
+
         private static Matrix _transformToDevice;
         private static Matrix _transformToDip;
 
@@ -91,5 +109,65 @@ namespace Theme.Helper
             Point bottomRight = LogicalPixelsToDevice(new Point(logicalThickness.Right, logicalThickness.Bottom));
             return new Thickness(topLeft.X, topLeft.Y, bottomRight.X, bottomRight.Y);
         }
+
+        #region WPF 4.6.1+ recommend
+        public static double DipToPixels(double dip, Visual visual)
+        {
+            DpiScale dpi = VisualTreeHelper.GetDpi(visual);
+            return dip * dpi.DpiScaleX;
+        }
+
+        public static Point DipToPixels(Point dipPoint, Visual visual)
+        {
+            DpiScale dpi = VisualTreeHelper.GetDpi(visual);
+            return new Point(dipPoint.X * dpi.DpiScaleX, dipPoint.Y * dpi.DpiScaleY);
+        }
+
+        public static Size DipToPixels(Size dipSize, Visual visual)
+        {
+            DpiScale dpi = VisualTreeHelper.GetDpi(visual);
+            return new Size(dipSize.Width * dpi.DpiScaleX, dipSize.Height * dpi.DpiScaleY);
+        }
+
+        public static Rect DipToPixels(Rect dipRect, Visual visual)
+        {
+            DpiScale dpi = VisualTreeHelper.GetDpi(visual);
+            return new Rect(
+                dipRect.X * dpi.DpiScaleX,
+                dipRect.Y * dpi.DpiScaleY,
+                dipRect.Width * dpi.DpiScaleX,
+                dipRect.Height * dpi.DpiScaleY);
+        }
+
+        public static double PixelsToDip(double pixels, Visual visual)
+        {
+            DpiScale dpi = VisualTreeHelper.GetDpi(visual);
+            return pixels / dpi.DpiScaleX;
+        }
+
+        public static Point PixelsToDip(Point pixelsPoint, Visual visual)
+        {
+            DpiScale dpi = VisualTreeHelper.GetDpi(visual);
+            return new Point(pixelsPoint.X / dpi.DpiScaleX, pixelsPoint.Y / dpi.DpiScaleY);
+        }
+
+        public static Size PixelsToDip(Size pixelsSize, Visual visual)
+        {
+            DpiScale dpi = VisualTreeHelper.GetDpi(visual);
+            return new Size(pixelsSize.Width / dpi.DpiScaleX, pixelsSize.Height / dpi.DpiScaleY);
+        }
+
+        public static Rect PixelsToDip(Rect pixelsRect, Visual visual)
+        {
+            DpiScale dpi = VisualTreeHelper.GetDpi(visual);
+            return new Rect(
+                pixelsRect.X / dpi.DpiScaleX,
+                pixelsRect.Y / dpi.DpiScaleY,
+                pixelsRect.Width / dpi.DpiScaleX,
+                pixelsRect.Height / dpi.DpiScaleY);
+        }
+        #endregion
+
+
     }
 }

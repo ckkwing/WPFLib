@@ -11,8 +11,13 @@
     
     <Color x:Key="COLOR_BLACK">#000000</Color>
     <Color x:Key="COLOR_WHITE">#FFFFFF</Color>
+    <Color x:Key="COLOR_TEXT_CLICKABLE">#2B53AA</Color>
+    <Color x:Key="COLOR_TEXT_DISABLED">#C9C9C9</Color>
+
     <SolidColorBrush x:Key="BRUSH_BLACK" Color="{StaticResource COLOR_BLACK}" />
     <SolidColorBrush x:Key="BRUSH_WHITE" Color="{StaticResource COLOR_WHITE}" />
+    <SolidColorBrush x:Key="BRUSH_TEXT_CLICKABLE" Color="{StaticResource COLOR_TEXT_CLICKABLE}" />
+    <SolidColorBrush x:Key="BRUSH_TEXT_DISABLED" Color="{StaticResource COLOR_TEXT_DISABLED}" />
 
     <System:Double x:Key="FONTSIZE_TITLE_H1">96</System:Double>
     <System:Double x:Key="FONTSIZE_TITLE_H2">60</System:Double>

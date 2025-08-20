@@ -9,6 +9,8 @@
     xmlns:converters="clr-namespace:Theme.Converters">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../ThemeCommonDefine.xaml" />
+        <ResourceDictionary Source="../ButtonStyles.xaml" />
+        <ResourceDictionary Source="../CircularStyles.xaml" />
         <ResourceDictionary Source="Brushs.xaml" />
         <ResourceDictionary Source="Images.xaml" />
         <ResourceDictionary Source="ButtonStyles.xaml" />
@@ -17,7 +19,6 @@
         <ResourceDictionary Source="ComboBoxStyles.xaml" />
         <ResourceDictionary Source="BaseWindowStyle.xaml" />
         <ResourceDictionary Source="WindowChromeStyle.xaml" />
-        <ResourceDictionary Source="../CircularStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--#region TextBlock-->

@@ -13,6 +13,17 @@ namespace Theme.Native
 {
     public static class NativeMethods
     {
+        public class Win10PlusNativeMethods
+        {
+            // Get the DPI of the monitor where the window is located
+            [DllImport("user32.dll")]
+            public static extern uint GetDpiForWindow(IntPtr hwnd);
+
+            // Get system DPI
+            [DllImport("user32.dll")]
+            public static extern uint GetDpiForSystem();
+        }
+
         public const int SM_CXPADDEDBORDER = 92;
 
         [DllImport("user32.dll")]

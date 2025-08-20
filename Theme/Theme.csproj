@@ -32,6 +32,7 @@
     <None Remove="Resources\Dark\Images\Show-Password.png" />
     <None Remove="Resources\Dark\Images\Small-Arrow-Down.png" />
     <None Remove="Resources\Dark\Images\Small-Arrow-Up.png" />
+    <None Remove="Styles\ButtonStyles.xaml" />
     <None Remove="Styles\Dark\BaseWindowStyle.xaml" />
     <None Remove="Styles\Dark\Brushs.xaml" />
     <None Remove="Styles\Dark\ButtonStyles.xaml" />
@@ -85,6 +86,9 @@
     </Page>
     <Page Include="CustomControl\Loading\CircularLoading2.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ButtonStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\CircularStyles.xaml">
