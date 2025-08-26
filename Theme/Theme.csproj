@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Expression.Drawing">
-      <HintPath>..\..\..\3rd\Blend\v4.0\Microsoft.Expression.Drawing.dll</HintPath>
+      <HintPath>..\3rdparty\Expression\Microsoft.Expression.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Expression.Interactions">
       <HintPath>..\3rdparty\Expression\Microsoft.Expression.Interactions.dll</HintPath>
