@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Interop;
 using Theme.ViewModels;
-using System.Drawing;
 
 namespace Theme.Helper
 {
@@ -15,6 +16,12 @@ namespace Theme.Helper
     /// </summary>
     public class ScreenMonitor : NotifyPropertyObject, IDisposable
     {
+        #region Events
+
+        public event EventHandler DisplaySettingsChanged;
+
+        #endregion
+
         public Screen PrimaryScreen
         {
             get => Screen.PrimaryScreen;
@@ -87,9 +94,16 @@ namespace Theme.Helper
 
         public ScreenMonitor()
         {
+            SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
         }
 
-        public void Detect()
+        private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
+        {
+            Reset();
+            DisplaySettingsChanged?.Invoke(this, e);
+        }
+
+        public void Reset()
         {
             _sortedScreens = null;
             _workingArea = new Rectangle();
@@ -245,6 +259,7 @@ namespace Theme.Helper
             if (isDisposing)
             {
                 //release managed resources
+                SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
             }
             //release unmanaged resources
             _alreadyDisposed = true;
