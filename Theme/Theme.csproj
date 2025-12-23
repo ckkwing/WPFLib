@@ -44,6 +44,7 @@
     <None Remove="Styles\Dark\Theme.xaml" />
     <None Remove="Styles\Dark\ToolTipStyles.xaml" />
     <None Remove="Styles\Dark\WindowChromeStyle.xaml" />
+    <None Remove="Styles\SelectionStyle.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Expression.Drawing">
@@ -119,6 +120,9 @@
     </Page>
     <Page Include="Styles\Dark\Images.xaml" />
     <Page Include="Styles\Dark\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\SelectionStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\ThemeCommonDefine.xaml">

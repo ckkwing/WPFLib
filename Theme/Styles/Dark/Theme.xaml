@@ -11,6 +11,7 @@
         <ResourceDictionary Source="../ThemeCommonDefine.xaml" />
         <ResourceDictionary Source="../ButtonStyles.xaml" />
         <ResourceDictionary Source="../CircularStyles.xaml" />
+        <ResourceDictionary Source="../SelectionStyle.xaml" />
         <ResourceDictionary Source="Brushs.xaml" />
         <ResourceDictionary Source="Images.xaml" />
         <ResourceDictionary Source="ButtonStyles.xaml" />

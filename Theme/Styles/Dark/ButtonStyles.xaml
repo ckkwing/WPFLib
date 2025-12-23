@@ -113,4 +113,46 @@
         <Setter Property="ImageHeight" Value="24" />
     </Style>
 
+    <Style TargetType="{x:Type CustomControl:BaseButton}">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value ="White"/>
+        <Setter Property="MinWidth" Value="80" />
+        <Setter Property="MaxWidth" Value="220" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Padding" Value="12,0" />
+        <Setter Property="Background" Value="#33FFFFFF" />
+        <Setter Property="OverBackground" Value="#33FFFFFF" />
+        <Setter Property="PressedBackground" Value="#33FFFFFF" />
+        <Setter Property="FocusedBackground" Value="#33FFFFFF" />
+        <Setter Property="DisabledBackground" Value="#33FFFFFF" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CustomControl:BaseButton}">
+                    <Border x:Name="border" HorizontalAlignment="Stretch" CornerRadius="2" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" MaxWidth="{TemplateBinding MaxWidth}" MinWidth="{TemplateBinding MinWidth}">
+                        <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{Binding OverBackground, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type CustomControl:BaseButton}}}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{Binding FocusedBackground, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type CustomControl:BaseButton}}}"/>
+                            <Setter Property="BorderThickness" TargetName="border" Value="1"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{Binding PressedBackground, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type CustomControl:BaseButton}}}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" TargetName="border" Value="{Binding DisabledBackground, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type CustomControl:BaseButton}}}"/>
+                            <Setter Property="Opacity" TargetName="content" Value="0.2"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
