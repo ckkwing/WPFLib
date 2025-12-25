@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:System="clr-namespace:System;assembly=mscorlib">
+    <System:String x:Uid="IDS_OK" x:Key="IDS_OK">OK</System:String>
+    <System:String x:Uid="IDS_CANCEL" x:Key="IDS_CANCEL">Cancel</System:String>
+    <System:String x:Uid="IDS_CLEAR" x:Key="IDS_CLEAR">Clear</System:String>
+    <!--Untranslated strings-->
+</ResourceDictionary>

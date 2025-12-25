@@ -32,6 +32,7 @@
     <None Remove="Resources\Dark\Images\Show-Password.png" />
     <None Remove="Resources\Dark\Images\Small-Arrow-Down.png" />
     <None Remove="Resources\Dark\Images\Small-Arrow-Up.png" />
+    <None Remove="Resources\LocalizedResources\Language.xaml" />
     <None Remove="Styles\ButtonStyles.xaml" />
     <None Remove="Styles\Dark\BaseWindowStyle.xaml" />
     <None Remove="Styles\Dark\Brushs.xaml" />
@@ -125,6 +126,9 @@
     <Page Include="Styles\SelectionStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\Resource_Images.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\ThemeCommonDefine.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,6 +173,9 @@
     <Resource Include="Resources\Dark\Images\Min-hover.png" />
     <Resource Include="Resources\Dark\Images\Min-press.png" />
     <Resource Include="Resources\Dark\Images\Min.png" />
+    <Page Include="Resources\LocalizedResources\Language.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Update="1. Documents\Border.xaml">
