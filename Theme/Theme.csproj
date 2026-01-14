@@ -10,6 +10,9 @@
     <BaseOutputPath>bin\</BaseOutputPath>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+    <!-- Enable WPF/XAML support so Add > New Item shows WPF UserControl, Window, etc. -->
+    <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="CustomControl\Dialogs\**" />
@@ -181,6 +184,9 @@
     <None Update="1. Documents\Border.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControls\" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG</DefineConstants>
