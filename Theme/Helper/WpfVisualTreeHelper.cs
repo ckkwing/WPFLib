@@ -37,5 +37,38 @@ namespace Theme.Helper
 
             return children;
         }
+
+        /// <summary>
+        /// Finds all items with a certain name in a subtree of the visual tree. 
+        /// Adds all th found items to the result.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="parent"></param>
+        /// <param name="childName"></param>
+        /// <returns></returns>
+        public static T FindChild<T>(DependencyObject parent, string childName) where T : DependencyObject
+        {
+            if (parent == null) return null;
+
+            int childrenCount = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < childrenCount; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+
+                // Check the current child element
+                if (child is T result &&
+                    ((child is FrameworkElement fe && fe.Name == childName) ||
+                     (child is FrameworkElement fe2 && fe2.Tag?.ToString() == childName)))
+                {
+                    return result;
+                }
+
+                // Recursive search
+                var childResult = FindChild<T>(child, childName);
+                if (childResult != null) return childResult;
+            }
+
+            return null;
+        }
     }
 }

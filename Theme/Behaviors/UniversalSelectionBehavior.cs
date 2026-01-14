@@ -495,6 +495,13 @@ namespace Theme.Behaviors
         {
             if (!IsEnabled) return;
 
+            // If it is a double-click, do not process it
+            if (e.ClickCount > 1)
+            {
+                e.Handled = false;
+                return;
+            }
+
             // ?? No needs below codes, because already set focus at the beginning
             // 如果启用自动焦点，确保 ListBox 获得焦点
             if (AutoFocus)
@@ -815,6 +822,13 @@ namespace Theme.Behaviors
 
         private void HandleListItemClick(MouseButtonEventArgs e)
         {
+            // If it is a double-click, do not process it
+            if (e.ClickCount > 1)
+            {
+                e.Handled = false;
+                return;
+            }
+
             if (!EnableStandardSelection)
             {
                 // 如果禁用标准选择行为，使用原有逻辑
